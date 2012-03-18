@@ -1,0 +1,24 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+<body>
+<div class="version">[VERSION] - [LAST_UPDATED]</div>
+<div class="site">
+<div class="main">
+	<div class="menu">
+		[MENU]
+	</div>
+	<div class="content">
+		[CONTENT]
+	</div>
+	<div class="decoration_lowerright_container">
+	<div class="decoration_lowerright">
+		<img src="/static/images/floral-lowerright.png">
+	</div>
+	</div>
+</div>
+</div>
+</body>
+</html>
+

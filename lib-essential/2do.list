@@ -1,0 +1,2 @@
+* why does the executeTest fail nondeterministically?
+- check out Rake::TestTask for the tests (f.i. adds the 'lib' dir to $LOAD_PATH automatically)

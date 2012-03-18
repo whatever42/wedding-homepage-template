@@ -1,0 +1,16 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+<body>
+<div class="login">
+	<b>Bitte einloggen</b><span class="login_note"><br/>(see servlet/passwords.yaml)</span>
+	<form action="/page" method="POST">
+		<input id="username" name="username" type="text" size="30" [USERNAME] /><br/>
+		<input name="password" type="password" size="30" /><br/>
+		<input type="submit" value="Login" />
+	</form>
+	<font color="red">[MSG]</font>
+</div>
+</body>
+</html>

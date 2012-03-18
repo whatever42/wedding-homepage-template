@@ -1,0 +1,16 @@
+2do list
+--------
+
+* implement logging for servlets
+- implement automatic deployment
+  * servlets should be allowed to manage their own deployment
+  * pack into an archiv (single file) for easy uploading
+  - should contain
+    * webserver
+    * all servlets
+    * server's production config
+    - versioning info & deployment date
+* implement virtual hosts
+  # server should be able to delegate requests to sub-servers based on the given hostname
+  # in the dafault-case the main webserver must handle the request
+- enable the filesystem-servlet to handle absolute path

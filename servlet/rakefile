@@ -1,0 +1,45 @@
+
+require 'rake'
+require 'fileutils'
+
+WEBSITE_VERSION = "v0.0.1"
+
+VERSION_FILE = "version"
+
+def create_timestamp()
+	now = Time.now()
+	return now.strftime("%Y-%m-%d %H:%M")
+end
+
+VERSION_CONTENT = <<EOF
+{
+	:version => "#{WEBSITE_VERSION}",
+	:last_updated => "#{create_timestamp()}"
+}
+EOF
+
+
+
+task :default do
+	puts "valid tasks are"
+	puts "\tclean"
+end
+
+task :clean do
+	system "rm *~"
+	system "rm *.log"
+	system "rm pages/*~"
+	system "rm static/css/*~"
+	system "rm -r upload"
+	system "rm version"
+end
+
+task :prepare_packaging => [ :clean ] do
+	puts "versioning wedding servlet"
+	File.open(VERSION_FILE,"w") do |f|
+		f.write(VERSION_CONTENT)
+	end
+end
+
+
+

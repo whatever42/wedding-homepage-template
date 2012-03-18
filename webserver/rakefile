@@ -1,0 +1,99 @@
+
+require 'rake'
+require 'tmpdir'
+require 'fileutils'
+
+RAKE = 'rake'
+TAR = 'tar'
+BZIP2 = 'bzip2'
+
+TMPDIR_NAME = "webserver_package"
+TMPDIR = "#{Dir.tmpdir}/#{TMPDIR_NAME}"
+PACKAGE_FILENAME = "#{TMPDIR_NAME}.tar"
+BZIPPED_PACKAGE_FILENAME = "#{PACKAGE_FILENAME}.bz2"
+
+WEBSERVER_DIRNAME = 'webrick'
+WEBSERVER_DEPLOYMENT_BASEDIR = '/var/local'
+WEBSERVER_DEPLOYMENT_DIR = "#{WEBSERVER_DEPLOYMENT_BASEDIR}/#{WEBSERVER_DIRNAME}"
+
+CONFIG_DEPLOYMENT_TARGET = "/etc/webrick/webrick.config"
+
+LOG_BASE_DIR = "/var/log"
+LOG_DIR = "#{LOG_BASE_DIR}/#{WEBSERVER_DIRNAME}"
+UPDATE_SCRIPT_NAME = "update-webrick.sh"
+
+
+def each_file(dir, recursive = false, follow_symlinks = false, show_hidden = false)
+	# puts "called with follow_symlinks = #{follow_symlinks.inspect}"
+	res = []
+	Dir.new(dir || ".").each do |name|
+		next if name =~ /^\.\.?$/
+		next if name =~ /^\./ and !show_hidden
+		full_name = dir ? "#{dir}/#{name}" : name
+		if File.directory?(full_name)
+			if recursive
+				if File.symlink?(full_name) and !follow_symlinks
+					# puts "omitting #{full_name}, as it is a symlink! #{follow_symlinks.inspect}"
+					next
+				end
+				each_file(full_name, true, follow_symlinks, show_hidden) do |filename|
+					yield(filename) if block_given?
+					res << filename
+				end
+			end
+		else
+			yield(full_name) if block_given?
+			res << full_name
+		end
+	end
+	return res
+end
+
+task :clean do
+	puts "cleaning logs"
+	FileUtils.rm_r("logs") if File.exists?("logs")
+	each_file(".", true) do |filename|
+		next unless filename =~ /~$/
+		puts "deleting #{filename}"
+		FileUtils.rm filename
+	end
+end
+
+task :edit do
+	system "kate #{each_file(".", true).select{|f| f =~ /\.rb$/ or f =~ /\.config$/}.join(" ")}"
+end
+
+task :package => [:clean] do
+	puts "preparing servlets..."
+	Dir.glob("servlets/*") do |servlet_dir|
+		if File.exists?("#{servlet_dir}/rakefile")
+			FileUtils.cd(servlet_dir) do
+				system(RAKE, "prepare_packaging")
+			end
+		end
+	end
+	puts "packaging..."
+	FileUtils.rm_r(TMPDIR) if File.exists?(TMPDIR)
+	FileUtils.mkdir_p(TMPDIR)
+	each_file(nil, true, true) do |filename|
+		next if filename =~ /~$/
+		# puts filename
+		dest_filename = "#{TMPDIR}/#{filename}"
+		dest_dirname = File.dirname(dest_filename)
+		FileUtils.mkdir_p(dest_dirname) unless File.directory?(dest_dirname)
+		FileUtils.cp(filename, dest_filename)
+	end
+	FileUtils.cd(Dir.tmpdir) do
+		FileUtils.rm(PACKAGE_FILENAME) if File.exists?(PACKAGE_FILENAME)
+		system(TAR, "-cvvf", PACKAGE_FILENAME, TMPDIR_NAME)
+
+		FileUtils.rm(BZIPPED_PACKAGE_FILENAME) if File.exists?(BZIPPED_PACKAGE_FILENAME)
+		system(BZIP2, PACKAGE_FILENAME)
+	end
+end
+
+def generate_timestamp()
+	time = Time.new
+	return time.strftime("%Y.%m.%d-%H:%M:%S.") + time.usec.to_s
+end
+

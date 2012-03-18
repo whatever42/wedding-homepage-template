@@ -1,0 +1,85 @@
+#!/usr/bin/ruby
+
+require 'rubygems'
+require 'rake'
+require 'rake/gempackagetask'
+require 'tmpdir'
+require 'fileutils'
+
+PKG_VERSION = '0.1.2'
+
+# TODO: add functionality to omit a list of directories (in this case 'pkg')
+# TODO: move this functionality to lib-essential
+def each_file(dir, recursive = false, follow_symlinks = false, show_hidden = false)
+	# puts "called with follow_symlinks = #{follow_symlinks.inspect}"
+	res = []
+	Dir.new(dir || ".").each do |name|
+		next if name =~ /^\.\.?$/
+		next if name =~ /^\./ and !show_hidden
+		full_name = dir ? "#{dir}/#{name}" : name
+		if File.directory?(full_name)
+			if recursive
+				if File.symlink?(full_name) and !follow_symlinks
+					# puts "omitting #{full_name}, as it is a symlink! #{follow_symlinks.inspect}"
+					next
+				end
+				each_file(full_name, true, follow_symlinks, show_hidden) do |filename|
+					yield(filename) if block_given?
+					res << filename
+				end
+			end
+		else
+			yield(full_name) if block_given?
+			res << full_name
+		end
+	end
+	return res
+end
+
+spec = Gem::Specification.new do |s|
+    s.platform = Gem::Platform::RUBY
+    s.summary = "Library of small but essential ruby code snippets."
+    s.name = 'lib-essential'
+    s.version = PKG_VERSION
+    s.requirements << 'none'
+    s.require_path = 'lib'
+    s.files = each_file(".", true).select{|f| !(f =~ /~$/) }
+    s.author = "Björn Engelmann"
+    s.email = "BjEngelmann@gmx.de"
+    s.homepage = ""
+    s.rubyforge_project = ""
+    s.description = <<EOF
+  A collection of small but essential ruby code snippets I have grown fond of over the years.
+EOF
+end
+
+package = Rake::GemPackageTask.new(spec) do |package|
+   package.need_zip = true
+   package.need_tar = true
+end
+
+task :clean do
+	puts "cleaning..."
+	each_file(".", true) do |filename|
+		next unless filename =~ /~$/
+		puts "deleting #{filename}"
+		FileUtils.rm filename
+	end
+	FileUtils.rm_r(package.package_dir)
+end
+
+task :edit do
+	system "kate #{each_file(".", true).select{|f| f =~ /\.rb$/ || f == "./rakefile"}.join(" ")}"
+end
+
+task :install => [:package] do
+	puts "installing..."
+	system("gem", "install", "#{package.package_dir}/#{package.gem_file}")
+end
+
+task :test do
+      system("ruby", "-I", "lib", "test/suite.rb")
+      abort unless $?.success?
+end
+
+

@@ -1,0 +1,5 @@
+<p>TEXT</p>
+[GALLERY]
+<div class='gallery_upload_button_container'>
+<a href='/page?page=upload' class='gallery_upload_button'>Upload</a>
+</div>

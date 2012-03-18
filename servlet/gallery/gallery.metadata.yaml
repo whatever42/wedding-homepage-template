@@ -1,0 +1,9 @@
+--- 
+- :subsections: 
+  - :pics: 
+    - :src: somepic.jpg
+      :thumb: somepic_thumb.jpg
+      :orig: original_filename.jpg
+    :name: ""
+  :name: SECTION_NAME
+

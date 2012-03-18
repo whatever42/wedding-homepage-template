@@ -1,0 +1,177 @@
+[2012-03-18 21:36:56] INFO  WEBrick 1.3.1
+[2012-03-18 21:36:56] INFO  ruby 1.8.7 (2010-01-10) [i486-linux]
+[2012-03-18 21:39:04] INFO  WEBrick 1.3.1
+[2012-03-18 21:39:04] INFO  ruby 1.8.7 (2010-01-10) [i486-linux]
+[2012-03-18 21:39:10] INFO  WEBrick::VirtualHostServer#start: pid=8794 port=8080
+[2012-03-18 21:39:22] ERROR Errno::ENOENT: No such file or directory - /var/local/gallery/gallery.metadata.yaml
+	servlets/wedding/servlet.rb:71:in `read'
+	servlets/wedding/servlet.rb:71:in `initialize'
+	/usr/lib/ruby/1.8/webrick/httpservlet/abstract.rb:23:in `new'
+	/usr/lib/ruby/1.8/webrick/httpservlet/abstract.rb:23:in `get_instance'
+	/usr/lib/ruby/1.8/webrick/httpserver.rb:102:in `service'
+	./src/virtual_host.rb:22:in `service'
+	/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+	/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+	/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+	/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+	/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+	/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+	/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+	/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+	/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+	src/webserver.rb:72:in `start_webrick'
+	src/webserver.rb:163
+[2012-03-18 21:39:22] ERROR Errno::ENOENT: No such file or directory - /var/local/gallery/gallery.metadata.yaml
+	servlets/wedding/servlet.rb:71:in `read'
+	servlets/wedding/servlet.rb:71:in `initialize'
+	/usr/lib/ruby/1.8/webrick/httpservlet/abstract.rb:23:in `new'
+	/usr/lib/ruby/1.8/webrick/httpservlet/abstract.rb:23:in `get_instance'
+	/usr/lib/ruby/1.8/webrick/httpserver.rb:102:in `service'
+	./src/virtual_host.rb:22:in `service'
+	/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+	/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+	/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+	/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+	/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+	/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+	/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+	/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+	/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+	src/webserver.rb:72:in `start_webrick'
+	src/webserver.rb:163
+[2012-03-18 21:39:22] ERROR Errno::ENOENT: No such file or directory - /var/local/gallery/gallery.metadata.yaml
+	servlets/wedding/servlet.rb:71:in `read'
+	servlets/wedding/servlet.rb:71:in `initialize'
+	/usr/lib/ruby/1.8/webrick/httpservlet/abstract.rb:23:in `new'
+	/usr/lib/ruby/1.8/webrick/httpservlet/abstract.rb:23:in `get_instance'
+	/usr/lib/ruby/1.8/webrick/httpserver.rb:102:in `service'
+	./src/virtual_host.rb:22:in `service'
+	/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+	/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+	/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+	/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+	/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+	/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+	/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+	/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+	/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+	src/webserver.rb:72:in `start_webrick'
+	src/webserver.rb:163
+[2012-03-18 21:40:18] INFO  going to shutdown ...
+[2012-03-18 21:40:18] INFO  WEBrick::VirtualHostServer#start done.
+[2012-03-18 21:58:58] INFO  WEBrick 1.3.1
+[2012-03-18 21:58:58] INFO  ruby 1.8.7 (2010-01-10) [i486-linux]
+[2012-03-18 21:59:11] INFO  WEBrick::VirtualHostServer#start: pid=12781 port=8080
+[2012-03-18 21:59:20] ERROR Errno::ENOENT: No such file or directory - gallery/gallery.metadata.yaml
+	servlets/wedding/servlet.rb:71:in `read'
+	servlets/wedding/servlet.rb:71:in `initialize'
+	/usr/lib/ruby/1.8/webrick/httpservlet/abstract.rb:23:in `new'
+	/usr/lib/ruby/1.8/webrick/httpservlet/abstract.rb:23:in `get_instance'
+	/usr/lib/ruby/1.8/webrick/httpserver.rb:102:in `service'
+	./src/virtual_host.rb:22:in `service'
+	/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+	/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+	/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+	/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+	/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+	/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+	/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+	/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+	/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+	src/webserver.rb:72:in `start_webrick'
+	src/webserver.rb:163
+[2012-03-18 21:59:33] INFO  going to shutdown ...
+[2012-03-18 21:59:33] INFO  WEBrick::VirtualHostServer#start done.
+[2012-03-18 21:59:59] INFO  WEBrick 1.3.1
+[2012-03-18 21:59:59] INFO  ruby 1.8.7 (2010-01-10) [i486-linux]
+[2012-03-18 22:00:04] INFO  WEBrick::VirtualHostServer#start: pid=12859 port=8080
+[2012-03-18 22:00:06] INFO  watch thread started with interval = 14400
+[2012-03-18 22:00:15] INFO  user Someone logged in. session_id=70780376875165884521598518729686
+[2012-03-18 22:00:28] ERROR `/gallery/somepic_thumb.jpg' not found.
+[2012-03-18 22:00:33] ERROR `/gallery/somepic_thumb.jpg' not found.
+[2012-03-18 22:00:40] ERROR `/gallery/somepic_thumb.jpg' not found.
+[2012-03-18 22:01:07] ERROR Errno::EACCES: Permission denied - /var/local/upload
+	/usr/lib/ruby/1.8/fileutils.rb:243:in `mkdir'
+	/usr/lib/ruby/1.8/fileutils.rb:243:in `fu_mkdir'
+	/usr/lib/ruby/1.8/fileutils.rb:217:in `mkdir_p'
+	/usr/lib/ruby/1.8/fileutils.rb:215:in `reverse_each'
+	/usr/lib/ruby/1.8/fileutils.rb:215:in `mkdir_p'
+	/usr/lib/ruby/1.8/fileutils.rb:201:in `each'
+	/usr/lib/ruby/1.8/fileutils.rb:201:in `mkdir_p'
+	./servlets/wedding/file_storage.rb:25:in `store'
+	servlets/wedding/servlet.rb:356:in `build_content'
+	servlets/wedding/servlet.rb:348:in `times'
+	servlets/wedding/servlet.rb:348:in `build_content'
+	servlets/wedding/servlet.rb:382:in `build_main_page'
+	servlets/wedding/servlet.rb:91:in `do_POST'
+	/usr/lib/ruby/1.8/webrick/httpservlet/abstract.rb:35:in `__send__'
+	/usr/lib/ruby/1.8/webrick/httpservlet/abstract.rb:35:in `service'
+	/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+	./src/virtual_host.rb:22:in `service'
+	/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+	/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+	/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+	/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+	/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+	/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+	/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+	/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+	/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+	src/webserver.rb:72:in `start_webrick'
+	src/webserver.rb:163
+[2012-03-18 22:01:26] INFO  going to shutdown ...
+[2012-03-18 22:01:26] INFO  WEBrick::VirtualHostServer#start done.
+[2012-03-18 22:02:06] INFO  WEBrick 1.3.1
+[2012-03-18 22:02:06] INFO  ruby 1.8.7 (2010-01-10) [i486-linux]
+[2012-03-18 22:02:11] INFO  WEBrick::VirtualHostServer#start: pid=13179 port=8080
+[2012-03-18 22:02:14] INFO  watch thread started with interval = 14400
+[2012-03-18 22:02:24] INFO  user Someone logged in. session_id=60032205778556665137049706097811
+[2012-03-18 22:04:41] INFO  user Someone logged in. session_id=79583327516474139035169719112565
+[2012-03-18 22:04:55] ERROR `/gallery/somepic_thumb.jpg' not found.
+[2012-03-18 22:05:11] INFO  user someone uploaded file examples.desktop
+[2012-03-18 22:05:42] ERROR `/gallery/somepic_thumb.jpg' not found.
+[2012-03-18 22:24:18] ERROR `/gallery/somepic_thumb.jpg' not found.
+[2012-03-18 22:24:20] ERROR `/gallery/somepic_thumb.jpg' not found.
+[2012-03-18 22:24:25] ERROR `/gallery/somepic_thumb.jpg' not found.
+[2012-03-18 22:26:42] ERROR `/gallery/somepic_thumb.jpg' not found.
+[2012-03-18 22:26:44] ERROR `/gallery/somepic_thumb.jpg' not found.
+[2012-03-18 22:26:44] ERROR `/gallery/somepic_thumb.jpg' not found.
+[2012-03-18 22:26:45] ERROR `/gallery/somepic_thumb.jpg' not found.
+[2012-03-18 22:26:45] ERROR `/gallery/somepic_thumb.jpg' not found.
+[2012-03-18 22:26:52] ERROR `/gallery/somepic_thumb.jpg' not found.
+[2012-03-18 22:26:52] ERROR `/gallery/somepic_thumb.jpg' not found.
+[2012-03-18 22:27:05] ERROR `/gallery/somepic_thumb.jpg' not found.
+[2012-03-18 22:27:53] ERROR `/gallery' not found.
+[2012-03-18 22:30:02] INFO  going to shutdown ...
+[2012-03-18 22:30:02] INFO  WEBrick::VirtualHostServer#start done.
+[2012-03-18 22:30:03] INFO  WEBrick 1.3.1
+[2012-03-18 22:30:03] INFO  ruby 1.8.7 (2010-01-10) [i486-linux]
+[2012-03-18 22:30:14] INFO  WEBrick::VirtualHostServer#start: pid=17289 port=8080
+[2012-03-18 22:30:19] ERROR `/gallery' not found.
+[2012-03-18 22:30:26] ERROR `/gallery/somepic.jpg' not found.
+[2012-03-18 22:30:47] INFO  watch thread started with interval = 14400
+[2012-03-18 22:30:53] INFO  user Someone logged in. session_id=93846688700739739980341298568218
+[2012-03-18 22:30:55] ERROR `/gallery/somepic_thumb.jpg' not found.
+[2012-03-18 22:30:57] ERROR `/gallery/somepic.jpg' not found.
+[2012-03-18 22:30:57] ERROR `/gallery/somepic_thumb.jpg' not found.
+[2012-03-18 22:33:15] INFO  going to shutdown ...
+[2012-03-18 22:33:15] INFO  WEBrick::VirtualHostServer#start done.
+[2012-03-18 22:33:16] INFO  WEBrick 1.3.1
+[2012-03-18 22:33:16] INFO  ruby 1.8.7 (2010-01-10) [i486-linux]
+[2012-03-18 22:33:21] INFO  WEBrick::VirtualHostServer#start: pid=17769 port=8080
+[2012-03-18 22:33:30] INFO  watch thread started with interval = 14400
+[2012-03-18 22:33:36] INFO  user Whatever logged in. session_id=43700933822589650767827597439748
+[2012-03-18 22:51:49] INFO  WEBrick 1.3.1
+[2012-03-18 22:51:49] INFO  ruby 1.8.7 (2010-01-10) [i486-linux]
+[2012-03-18 22:51:53] INFO  going to shutdown ...
+[2012-03-18 22:51:53] INFO  WEBrick::VirtualHostServer#start done.
+[2012-03-18 22:51:54] INFO  WEBrick::VirtualHostServer#start: pid=20151 port=8080
+[2012-03-18 22:51:56] INFO  going to shutdown ...
+[2012-03-18 22:51:56] INFO  WEBrick::VirtualHostServer#start done.
+[2012-03-18 22:51:58] INFO  WEBrick 1.3.1
+[2012-03-18 22:51:58] INFO  ruby 1.8.7 (2010-01-10) [i486-linux]
+[2012-03-18 22:52:03] INFO  WEBrick::VirtualHostServer#start: pid=20168 port=8080
+[2012-03-18 22:52:50] INFO  watch thread started with interval = 14400
+[2012-03-18 22:53:03] INFO  user Someone logged in. session_id=97087201129629892553363042965568
+[2012-03-18 22:55:08] INFO  going to shutdown ...
+[2012-03-18 22:55:08] INFO  WEBrick::VirtualHostServer#start done.
